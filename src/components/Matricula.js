@@ -15,6 +15,7 @@ function Matricula({user}) {
             <div>
                 {user.cursos.map(curso => <Grupos curso={curso}/>)}
             </div>
+            <button>Matricularme</button>
         </div>
     </div>
   )

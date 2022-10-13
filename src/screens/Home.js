@@ -2,7 +2,8 @@ import React from 'react';
 import UserInfo from '../components/UserInfo';
 import firebaseApp from '../firebase/credenciales';
 import { getAuth, signOut } from "firebase/auth";
-import Matricula from '../components/Matricula';
+
+import Sydebar from '../components/Sydebar';
 const auth = getAuth(firebaseApp);
 
 function Home( {user} ) {
@@ -13,7 +14,8 @@ function Home( {user} ) {
       </h1>
       <button onClick={()=> signOut(auth) }>Cerrar sesión</button>
       <UserInfo user={user} />
-      <Matricula user={user} />
+      <Sydebar user={user}/>
+      
     </div>
   )
 }

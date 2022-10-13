@@ -19,29 +19,27 @@ function Login() {
     return (
         <div>
             
-            <h1 class="title">SISTEMA DE MATRICULAS LABORATORIOS 2022-B</h1>
-            <body>
+            <h1 className="title">SISTEMA DE MATRICULAS LABORATORIOS 2022-B</h1>
             
-            <section class="form-login">
+            <section className="form-login">
 
                 <h5>Bienvenido</h5>
             
                 <form onSubmit={submitHandler}>
                 <p><label>
                     Correo electrónico:
-                    <input class="controls" type="email" id="email"/>
+                    <input className="controls" type="email" id="email"/>
                 </label>
                 </p>
                 <p>
                 <label>
                     Contraseña:
-                    <input class="controls" type="password" id="password"/>
+                    <input className="controls" type="password" id="password"/>
                 </label>
                 </p>
-                <input class= "button" type="submit" value="Iniciar sesión"/>
+                <input className= "button" type="submit" value="Iniciar sesión"/>
                 </form> 
             </section>
-            </body>
         </div>
     )
 }
