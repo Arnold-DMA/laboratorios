@@ -1,7 +1,7 @@
 import React from 'react';
 import firebaseApp from "../firebase/credenciales";
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
-
+import './Login.css'
 const auth = getAuth(firebaseApp);
 
 function Login() {
@@ -18,18 +18,30 @@ function Login() {
 
     return (
         <div>
-            <h1>Inicio de sesión</h1>
-            <form onSubmit={submitHandler}>
-                <label>
+            
+            <h1 class="title">SISTEMA DE MATRICULAS LABORATORIOS 2022-B</h1>
+            <body>
+            
+            <section class="form-login">
+
+                <h5>Bienvenido</h5>
+            
+                <form onSubmit={submitHandler}>
+                <p><label>
                     Correo electrónico:
-                    <input type="email" id="email"/>
+                    <input class="controls" type="email" id="email"/>
                 </label>
+                </p>
+                <p>
                 <label>
                     Contraseña:
-                    <input type="password" id="password"/>
+                    <input class="controls" type="password" id="password"/>
                 </label>
-                <input type="submit" value="Iniciar sesión"/>
-            </form>
+                </p>
+                <input class= "button" type="submit" value="Iniciar sesión"/>
+                </form> 
+            </section>
+            </body>
         </div>
     )
 }
