@@ -3,14 +3,14 @@ import React from 'react'
 function UserInfo( {user}) {
   return (
     <div>
-        <h3>
+        <h3 className='blanco'>
             Matrícula
         </h3>
-        <h4>Detalle del estudiante</h4>
-        <div>
+        <h4 className='blanco'>Detalle del estudiante</h4>
+        <div className='blanco'>
             <strong>Nombre: </strong>{user.nombre}
         </div>
-        <div>
+        <div className='blanco'>
             <strong>CUI: </strong>{user.cui}
         </div>
     </div>
