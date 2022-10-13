@@ -1,9 +1,18 @@
-import React, {useState} from 'react'
+import React from 'react';
+import firebaseApp from "../firebase/credenciales";
+import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
+
+const auth = getAuth(firebaseApp);
 
 function Login() {
 
     function submitHandler(e){
         e.preventDefault();
+
+        const email = e.target.elements.email.value;
+        const password = e.target.elements.password.value;
+        signInWithEmailAndPassword(auth, email, password);
+
         console.log("submit");
     }
 

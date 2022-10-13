@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import firebaseApp from '../firebase/credenciales';
+import { getAuth, signOut } from "firebase/auth";
+const auth = getAuth(firebaseApp);
 
-function Home() {
+function Home( {user} ) {
   return (
-    <div>Home</div>
+    <div>
+      Home
+      <button onClick={()=> signOut(auth) }>Cerrar sesión</button>
+      <br/>
+      <button>Aquí irá toda la magia</button>
+    </div>
   )
 }
 
