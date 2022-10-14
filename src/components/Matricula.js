@@ -5,10 +5,10 @@ function Matricula({user}) {
     
   return (
     <div>
-        <h4 className='blanco'>
+        <h4 className='blanco1'>
             Detalles de matrícula
         </h4>
-        <div className='blanco'>
+        <div className='blanco1'>
             <strong>
                 Tus cursos
             </strong>
