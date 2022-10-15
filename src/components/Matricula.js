@@ -14,22 +14,30 @@ function Matricula({user}) {
         
     }
 
+    //Función llamada cada vez que se realiza un cambio en la selección de curso
     function rehacer(i, activo) {
+        //Comprueba si ya se ha asignado el curso en el horario anteriormente
         if(estados[i]){
+            //Bucle para iterar todas las horas de laboratorio del [Curso, grupo] seleccionado
             estados[i][2].forEach(element => {
+                //Comprueba si el horario asignado anteriormente no era un cruce y lo setea a vacío.
                 if(referencias.current[element].className === "propuesta"){
                     referencias.current[element].textContent = "";
                     referencias.current[element].className = "vacio";
                 }
+                //En caso de que sea un cruce se separa los cursos dentro del cruce y se intera sobre ellos
                 else if (referencias.current[element].className === "cruce"){
                     let temp = referencias.current[element].textContent.split("\n");
                     referencias.current[element].textContent = "";
                     let contar = 0;
-                    temp.forEach(abr => {                        
+                    temp.forEach(abr => {
+                        //Se escriben todos los cursos menos el que está cambiando a otro horario.                        
                         if(abr !== estados[i][3]+" - "+estados[i][1]){
                             referencias.current[element].textContent += abr + "\n";
                             contar++;
                         }
+                        //Si la cantidad de cursos que quedan en la celda que tenía cruce es 1 se setea como propuesta
+                        //caso contrario permanece como cruce.
                         if (contar === 1){
                             referencias.current[element].className = "propuesta";
                         }
@@ -43,11 +51,14 @@ function Matricula({user}) {
         let est = estados;
         est[i] = activo;
         setEstado(est);
+        //Se itera para cada hora del curso seleccionado
         activo[2].forEach(element => {
+            //Si la celda está vacía lo setea como propuesta
             if(referencias.current[element].className === "vacio"){
                 referencias.current[element].textContent = estados[i][3]+" - "+estados[i][1];
                 referencias.current[element].className = "propuesta";
             }
+            //caso contrario lo setea como cruce
             else{
                 referencias.current[element].textContent += "\n"+estados[i][3]+" - "+estados[i][1];
                 referencias.current[element].className = "cruce";
@@ -55,7 +66,7 @@ function Matricula({user}) {
             
         });
     }
-
+//Creación de tabla de horario con refs para controlar cada celda.
     function drawTabla(hora){
         let horario = [];
         for(let i = 0; i<5; i++){

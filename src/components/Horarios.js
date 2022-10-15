@@ -33,6 +33,7 @@ function Horarios({user}) {
                 </thead>
                 <tbody>
                   {user.cursos.map(curso=>{
+                    //Se obtiene la información de los grupos de laboratorio por cada curso
                     return(
                       <tr>
                         <td> {curso}</td>

@@ -13,6 +13,7 @@ const firestore = getFirestore(firebaseApp);
 function App() {
   const [user, setUser] = useState(null);
 
+  //Función para obtener los datos del usuario que ha iniciado sesión.
   async function getData(email) {
     const docuRef = doc(firestore, `users/${email}`);
     const docuCipher = await getDoc(docuRef);
@@ -38,12 +39,15 @@ function App() {
     });
   }
 
+  //Función que se ejecuta al hacer un cambio en la autenticación
   onAuthStateChanged(auth, (usuarioFirebase) => {
+    //Si existe una sesión obtiene los datos
     if(usuarioFirebase) {
       if(!user){
         setUserData(usuarioFirebase);
       }
     }
+    //de lo contrario setea los datos a null
     else {
       setUser (null);
     }
