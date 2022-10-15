@@ -2,15 +2,15 @@ import React from 'react'
 
 function UserInfo( {user}) {
   return (
-    <div>
-        <h3 className='blanco'>
+    <div className='blanco1' >
+        <h3 >
             Matrícula
         </h3>
-        <h4 className='blanco'>Detalle del estudiante</h4>
-        <div className='blanco'>
+        <h4 >Detalle del estudiante</h4>
+        <div >
             <strong>Nombre: </strong>{user.nombre}
         </div>
-        <div className='blanco'>
+        <div >
             <strong>CUI: </strong>{user.cui}
         </div>
     </div>

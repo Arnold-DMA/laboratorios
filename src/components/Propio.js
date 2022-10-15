@@ -23,7 +23,7 @@ function Propio({user}) {
 
   return (
     <div>
-        <h4 className='blanco'>
+        <h4 className='blanco1'>
             Mis Matrículas
         </h4>
         {matricula?matricula[0].map(function(curso, i) {

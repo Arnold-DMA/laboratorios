@@ -5,7 +5,6 @@ function Matricula({user}) {
 
     const [estados, setEstado] = useState([]);
     const referencias = useRef([]);
-    const blank = useRef();
     referencias.current = [];
 
     function addToRefs(el){
@@ -41,10 +40,10 @@ function Matricula({user}) {
     
   return (
     <>
-        <h4 className='blanco' ref={blank}>
+        <h4 className='blanco1'>
             Detalles de matrícula
         </h4>
-        <div className='blanco'>
+        <div className='blanco1'>
             <strong>
                 Tus cursos
             </strong>
