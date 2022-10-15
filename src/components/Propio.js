@@ -27,7 +27,7 @@ function Propio({user}) {
             Mis Matrículas
         </h4>
         {matricula?matricula[0].map(function(curso, i) {
-            return matricula[1][i]?<div> {curso+": "+matricula[1][i]}</div>:<div>{curso+": No registra matrícula."}</div>
+            return matricula[1][i]?<div key={i}> {curso+": "+matricula[1][i]}</div>:<div key={i}>{curso+": No registra matrícula."}</div>
         }):<p>Cargando...</p>}
     </div>
   )
