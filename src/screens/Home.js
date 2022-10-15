@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import UserInfo from '../components/UserInfo';
 import firebaseApp from '../firebase/credenciales';
 import { getAuth, signOut } from "firebase/auth";
-
+import './Login.css'
 import Sydebar from '../components/Sydebar';
 import Matricula from '../components/Matricula';
 import Horarios from '../components/Horarios';
@@ -15,10 +15,10 @@ function Home( {user} ) {
 
   return (
     <div>
-    <header>
+    <header className='user'>
       Bienvenido {user.nombre}
       
-      <button onClick={()=> signOut(auth) }>Cerrar sesión</button>
+      <button className='botonsalir' onClick={()=> signOut(auth) }>Cerrar sesión</button>
     </header>
     <nav>
       <UserInfo user={user} />

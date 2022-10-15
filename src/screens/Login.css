@@ -56,3 +56,34 @@ body{
     -webkit-background-size: cover;
     -o-background-size: cover;
 }
+.botonsalir{
+    float: right;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #9a9a9b;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+    box-shadow: 0 9px rgb(36, 48, 92);
+    
+}
+.botonsalir:hover {background-color: #081d40}
+
+.botonsalir:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.user{
+    background-color: #081d40;
+    color: white;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    font-size: 34px;
+}
