@@ -17,16 +17,42 @@ function Matricula({user}) {
     function rehacer(i, activo) {
         if(estados[i]){
             estados[i][2].forEach(element => {
-                referencias.current[element].textContent = "";
-                referencias.current[element].className = "vacio";
+                if(referencias.current[element].className === "propuesta"){
+                    referencias.current[element].textContent = "";
+                    referencias.current[element].className = "vacio";
+                }
+                else if (referencias.current[element].className === "cruce"){
+                    let temp = referencias.current[element].textContent.split("\n");
+                    referencias.current[element].textContent = "";
+                    let contar = 0;
+                    temp.forEach(abr => {                        
+                        if(abr !== estados[i][3]+" - "+estados[i][1]){
+                            referencias.current[element].textContent += abr + "\n";
+                            contar++;
+                        }
+                        if (contar === 1){
+                            referencias.current[element].className = "propuesta";
+                        }
+                        
+                    });
+                }
+                
             });
         }
+        console.log("activo", estados);
         let est = estados;
         est[i] = activo;
         setEstado(est);
         activo[2].forEach(element => {
-            referencias.current[element].textContent = activo[3]+" - "+activo[1];
-            referencias.current[element].className = "propuesta";
+            if(referencias.current[element].className === "vacio"){
+                referencias.current[element].textContent = estados[i][3]+" - "+estados[i][1];
+                referencias.current[element].className = "propuesta";
+            }
+            else{
+                referencias.current[element].textContent += "\n"+estados[i][3]+" - "+estados[i][1];
+                referencias.current[element].className = "cruce";
+            }
+            
         });
     }
 
@@ -34,7 +60,7 @@ function Matricula({user}) {
         let horario = [];
         for(let i = 0; i<5; i++){
             let key = hora*5 + i;
-            horario.push(<td key={key} id={"horario-"+key} ref={addToRefs}></td>);
+            horario.push(<td key={key} id={"horario-"+key} className="vacio" ref={addToRefs}></td>);
         }
         return horario;
     }

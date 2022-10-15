@@ -111,6 +111,10 @@ table, th, td {
   background-color: darkgreen;
 }
 
+.cruce {
+  background-color: maroon;
+}
+
 .vacio {
   opacity: 50%;
 }
