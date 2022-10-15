@@ -18,6 +18,7 @@ function Matricula({user}) {
         if(estados[i]){
             estados[i][2].forEach(element => {
                 referencias.current[element].textContent = "";
+                referencias.current[element].className = "vacio";
             });
         }
         let est = estados;
@@ -25,6 +26,7 @@ function Matricula({user}) {
         setEstado(est);
         activo[2].forEach(element => {
             referencias.current[element].textContent = activo[3]+" - "+activo[1];
+            referencias.current[element].className = "propuesta";
         });
     }
 
@@ -54,14 +56,14 @@ function Matricula({user}) {
                 <thead>
                     <tr>
                         <th>Hora\Día</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miércoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
+                        <th className='diasSemana'>Lunes</th>
+                        <th className='diasSemana'>Martes</th>
+                        <th className='diasSemana'>Miércoles</th>
+                        <th className='diasSemana'>Jueves</th>
+                        <th className='diasSemana'>Viernes</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='horarioBody'>
                     <tr>
                         <th>07:00 - 07:50</th>
                         {drawTabla(0)}
