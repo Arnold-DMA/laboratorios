@@ -30,6 +30,17 @@ table, th, td {
  
   background-color: #081d40;
   color: white;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  
+  
+ }
+ .blanco2{
+ 
+  background-color: #081d40;
+  color: white;
+  position: relative;
+
   
   
  }
@@ -60,3 +71,30 @@ table, th, td {
   text-align: center;
   font-size: 20px;
  }
+
+ .boton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #0c2e68;
+  border: none;
+  border-radius: 15px;
+  justify-content: center;
+  box-shadow: 0 9px #999;
+  
+  
+ 
+}
+
+.boton:hover {background-color: #081d40}
+
+.boton:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
