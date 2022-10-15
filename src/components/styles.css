@@ -42,6 +42,13 @@ table, th, td {
   position: relative;
 
   
+ }
+ .blanco3{
+ 
+  background-color: #081d40;
+  color: white;
+  float: left;
+
   
  }
  .center{
@@ -86,6 +93,7 @@ table, th, td {
   border-radius: 15px;
   justify-content: center;
   box-shadow: 0 9px #999;
+
   
   
  

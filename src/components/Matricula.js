@@ -79,7 +79,7 @@ function Matricula({user}) {
     
   return (
     <>
-        <h4 className='blanco1'>
+        <h4 className='blanco3'>
             Detalles de matrícula
         </h4>
         <div className='blanco1'>
